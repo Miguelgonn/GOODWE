@@ -98,6 +98,17 @@ Exibir estações de recarga em mapas interativos e facilitar a navegação dos 
 | ANEEL Open Data API | Obtenção de dados energéticos e tarifários oficiais |
 | Mapbox API | Visualização geográfica, mapas interativos e rotas |
 
+### Documentação das APIs
+
+- Open Charge Map API:
+  https://openchargemap.org/develop/api
+
+- ANEEL Open Data:
+  https://dadosabertos.aneel.gov.br/
+
+- Mapbox API:
+  https://docs.mapbox.com/api/overview/
+  
 ## Arquitetura da Solução
 ### Diagrama
 
