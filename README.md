@@ -320,18 +320,35 @@ Usuário → Carregador GoodWe → Plataforma SEMS → API → Backend Volt Rate
 
 ## Modelo de Rateio Proposto
 
-O modelo de rateio adotado pelo Volt Rate será baseado no consumo individual de energia elétrica medido durante cada sessão de recarga.
+A plataforma Volt Rate adotará dois modelos de cobrança para atender diferentes necessidades de operação da infraestrutura de recarga: o modelo pré-pago e o modelo pós-pago.
 
-O cálculo utilizará as seguintes variáveis:
+### Modelo Pré-pago
 
-* Energia consumida (kWh);
-* Tarifa de energia elétrica (R$/kWh);
-* Taxa administrativa opcional;
-* Período de faturamento.
+No modelo pré-pago, o usuário realiza a compra antecipada de créditos que serão convertidos em energia para utilização nos carregadores. A cada sessão de recarga, o sistema desconta automaticamente do saldo disponível a quantidade correspondente ao consumo realizado.
 
-A fórmula básica de cálculo será:
+Esse modelo oferece maior controle financeiro para os usuários e reduz riscos de inadimplência para os administradores da infraestrutura. Além disso, permite que o acesso ao carregador seja condicionado à existência de saldo disponível na conta do usuário.
 
-Valor da Fatura = (Energia Consumida × Tarifa de Energia) + Taxa Administrativa
+As principais variáveis utilizadas são:
+
+#### Saldo de créditos disponível;
+#### Energia consumida na sessão (kWh);
+#### Tarifa de energia (R$/kWh).
+
+### Modelo Pós-pago
+
+No modelo pós-pago, o usuário realiza suas recargas normalmente durante o período de faturamento e recebe uma cobrança consolidada ao final do mês.
+
+O sistema registra todas as sessões realizadas, calcula o consumo acumulado e gera uma fatura individual com base na energia efetivamente utilizada.
+
+As principais variáveis utilizadas são:
+
+### Energia consumida por sessão (kWh);
+### Consumo acumulado no período;
+### Tarifa de energia vigente (R$/kWh).
+
+A cobrança será calculada pela fórmula:
+
+### Valor da Fatura = Consumo Total (kWh) × Tarifa de Energia
 
 Esse modelo foi escolhido por oferecer maior transparência e justiça entre os usuários, uma vez que cada indivíduo paga apenas pelo consumo efetivamente realizado.
 
@@ -351,7 +368,7 @@ Quando uma unidade possuir mais de um veículo cadastrado, o sistema consolidar�
 
 Essa abordagem simplifica o processo de cobrança e mantém a rastreabilidade dos consumos individuais.
 
-# 6.4 Opção B — Definição do Papel da Inteligência Artificial
+# Definição do Papel da Inteligência Artificial
 
 A utilização de inteligência artificial representa um dos diferenciais da plataforma Volt Rate. Entre as aplicações consideradas para o projeto, destacam-se a previsão de consumo energético e a detecção de anomalias operacionais.
 
