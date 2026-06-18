@@ -65,9 +65,9 @@ C --> E
 C --> F
 
 F -->|Open Charge Map| G
-F -->|Google Places| G
-F -->|OpenWeather| G
-F -->|Mapbox| G
+F -->|ANEEL Open Data API| G
+F -->|Mapbox API| G
+
 
 D --> G
 E --> G
