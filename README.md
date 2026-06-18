@@ -244,7 +244,7 @@ Exibir estações de recarga em mapas interativos e facilitar a navegação dos 
 - Mapbox API:
   https://docs.mapbox.com/api/overview/
 
-## Frente 3 — Arquitetura e Inteligência Artificial (OPÇÃO B)
+## Frente 3 — Arquitetura e Inteligência Artificial (Opção B)
   
 ## Arquitetura da Solução
 ### Diagrama
