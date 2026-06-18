@@ -30,9 +30,12 @@ Cada solução apresenta diferentes abordagens para o problema, com vantagens e 
 
 ### Open Charge Map API:
  API pública que oferece dados sobre estações de recarga em todo o mundo, incluindo localização, tipos de conectores e disponibilidade. Essa API pode ser integrada para fornecer informações adicionais sobre pontos de recarga próximos, ampliando a experiência do usuário.
-### Google Places API:
-Permite a busca e detalhamento de estabelecimentos e locais próximos às estações de recarga, facilitando a oferta de serviços adicionais (como cafés, lojas, etc.) para usuários durante o tempo de recarga.
+ 
+### ANEEL Open Data API:
+Plataforma de dados abertos da Agência Nacional de Energia Elétrica (ANEEL), que disponibiliza informações oficiais sobre tarifas de energia, distribuidoras, consumo e indicadores do setor elétrico brasileiro. Pode ser utilizada para enriquecer análises de consumo energético, apoiar cálculos de custos de recarga e fornecer dados regulatórios confiáveis para o sistema.
 
+### Mapbox API:
+Plataforma de mapas e geolocalização que permite exibir mapas interativos, localizar estações de recarga, calcular rotas e converter endereços em coordenadas geográficas. Sua integração pode facilitar a visualização dos pontos de recarga e melhorar a navegação dos usuários até as estações disponíveis.
 ## Frente 3: Arquitetura e IA - Definição do Papel da IA (Opção B)
 A inteligência artificial desempenha um papel central na otimização e personalização da experiência do EV ChargeOps. As duas abordagens principais escolhidas são:
 
