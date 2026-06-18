@@ -83,6 +83,8 @@ Esses dados são fundamentais para o funcionamento do Volt Rate, pois permitem a
 
 A integração entre a regulamentação da ANEEL, os recursos de comunicação do GoodWe HCA G2 e os dados disponibilizados pela plataforma SEMS cria uma base tecnológica adequada para o desenvolvimento de soluções voltadas à gestão inteligente de carregadores compartilhados.
 
+---
+
 ### Open Charge Map API
 
 A Open Charge Map é uma API pública e colaborativa que fornece informações sobre estações de recarga para veículos elétricos em todo o mundo. A plataforma disponibiliza dados como localização geográfica, tipos de conectores, potência dos carregadores e informações operacionais das estações.
