@@ -64,8 +64,8 @@ C --> D
 C --> E
 C --> F
 
-F -->|Open Charge Map| G
-F -->|ANEEL Open Data API| G
+F -->|Open Charge | G
+F -->|ANEEL Open Data | G
 F -->|Mapbox API| G
 
 
