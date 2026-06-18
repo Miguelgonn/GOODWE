@@ -18,6 +18,84 @@ Este projeto é desenvolvido no âmbito da parceria GoodWe + FIAP, com o objetiv
 
 ## Frente 1: Análise de Mercado (Opção A)
 
+
+### Infraestruturas de Recarga Compartilhada
+
+As infraestruturas de recarga compartilhada são ambientes onde um ou mais carregadores de veículos elétricos são utilizados por diversos usuários. Esse modelo é comum em condomínios residenciais, edifícios corporativos, universidades e estacionamentos compartilhados, onde não é viável instalar um carregador exclusivo para cada veículo.
+
+O principal objetivo desse tipo de infraestrutura é otimizar custos, espaço físico e consumo energético, permitindo que vários usuários tenham acesso ao serviço de recarga.
+
+### Principais Desafios Operacionais
+
+Entre os principais desafios enfrentados pelos gestores estão:
+
+- Identificação dos usuários que utilizam os carregadores;
+- Controle das sessões de recarga;
+- Monitoramento da disponibilidade dos equipamentos;
+- Cálculo do consumo individual de energia;
+- Rateio justo dos custos entre os usuários;
+- Transparência na cobrança e geração de relatórios;
+- Manutenção e monitoramento dos equipamentos.
+
+Esses desafios tornam necessária a utilização de plataformas inteligentes capazes de registrar e analisar os dados gerados durante as recargas.
+
+---
+
+### Funcionamento de uma Sessão de Recarga
+
+Uma sessão de recarga inicia quando o usuário conecta o veículo elétrico ao carregador. Após a autenticação do usuário, por aplicativo, cartão RFID ou outro método de identificação, o carregador libera o fornecimento de energia para o veículo.
+
+Durante toda a sessão, o equipamento monitora e registra diversas informações operacionais. Ao final do carregamento ou quando o veículo é desconectado, a sessão é encerrada e os dados são armazenados para consulta e faturamento.
+
+#### Dados Gerados Durante a Sessão
+
+- Identificação do usuário;
+- Data e horário de início;
+- Data e horário de término;
+- Duração da sessão;
+- Energia consumida (kWh);
+- Potência instantânea e média;
+- Status da sessão;
+- Eventos e possíveis falhas.
+
+Esses dados podem ser capturados por meio da API do carregador, protocolos de comunicação como RS-485, conexões Wi-Fi ou LAN e armazenados em bancos de dados para posterior análise.
+
+---
+
+### Modelos de Negócio para Recarga Compartilhada
+
+Atualmente existem diferentes modelos de negócio utilizados no Brasil e em outros países para gerenciar a cobrança da recarga de veículos elétricos.
+
+#### Recarga Gratuita
+
+O usuário utiliza o carregador sem qualquer cobrança. Esse modelo é comum em estabelecimentos que oferecem a recarga como benefício ou estratégia de atração de clientes.
+
+#### Cobrança por kWh
+
+O usuário paga apenas pela quantidade de energia efetivamente consumida durante a sessão. É considerado um dos modelos mais justos e transparentes.
+
+#### Cobrança por Tempo
+
+A cobrança é realizada com base no período em que o carregador permaneceu ocupado, independentemente da quantidade de energia consumida.
+
+#### Assinatura Mensal
+
+O usuário paga uma mensalidade fixa que lhe dá direito a utilizar os carregadores dentro de determinadas condições previamente estabelecidas.
+
+#### Rateio Condominial
+
+Os custos totais de energia são divididos entre os usuários com base em critérios definidos pelo condomínio, normalmente considerando o consumo individual registrado por cada sessão.
+
+#### Créditos Pré-Pagos (Gift Card)
+
+O usuário adiciona créditos à sua conta antes de utilizar os carregadores. A cada sessão de recarga, o valor correspondente ao consumo é descontado automaticamente do saldo disponível.
+
+#### Pagamento Mensal (Pós-Pago)
+
+Todas as sessões realizadas durante o mês são registradas pela plataforma e, ao final do período, é gerada uma fatura consolidada contendo o consumo total e o valor a ser pago pelo usuário.
+
+---
+
 ### Zaptec: 
  Plataforma que oferece carregadores inteligentes com monitoramento em tempo real e modelo de cobrança por assinatura.
 ### Wallbox:
