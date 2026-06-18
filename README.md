@@ -28,20 +28,75 @@ Cada solução apresenta diferentes abordagens para o problema, com vantagens e 
 
 ## Frente 2: Base Regulatória e Técnica - Mapeamento de APIs Complementares (Opção C)
 
-### Open Charge Map API:
- API pública que oferece dados sobre estações de recarga em todo o mundo, incluindo localização, tipos de conectores e disponibilidade. Essa API pode ser integrada para fornecer informações adicionais sobre pontos de recarga próximos, ampliando a experiência do usuário.
- 
-### ANEEL Open Data API:
-Plataforma de dados abertos da Agência Nacional de Energia Elétrica, que disponibiliza informações oficiais sobre tarifas de energia, distribuidoras, consumo e indicadores do setor elétrico brasileiro. Pode ser utilizada para enriquecer análises de consumo energético, apoiar cálculos de custos de recarga e fornecer dados regulatórios confiáveis para o sistema.
+### Open Charge Map API
 
-### Mapbox API:
-Plataforma de mapas e geolocalização que permite exibir mapas interativos, localizar estações de recarga, calcular rotas e converter endereços em coordenadas geográficas. Sua integração pode facilitar a visualização dos pontos de recarga e melhorar a navegação dos usuários até as estações disponíveis.
-## Frente 3: Arquitetura e IA - Definição do Papel da IA (Opção B)
-A inteligência artificial desempenha um papel central na otimização e personalização da experiência do EV ChargeOps. As duas abordagens principais escolhidas são:
+A Open Charge Map é uma API pública e colaborativa que fornece informações sobre estações de recarga para veículos elétricos em todo o mundo. A plataforma disponibiliza dados como localização geográfica, tipos de conectores, potência dos carregadores e informações operacionais das estações.
 
-Previsão de Demanda (Regressão): Utilizando modelos de regressão, a IA prevê os horários de maior demanda para otimizar o uso dos carregadores, evitando sobrecargas e melhorando a eficiência energética. Essa previsão permite também ajustar preços dinamicamente conforme o consumo esperado.
-Clustering para Segmentação de Usuários: Aplicando técnicas de clustering (como K-Means), a IA segmenta os usuários em perfis distintos (por exemplo, residentes frequentes versus visitantes ocasionais). Essa segmentação possibilita oferecer planos personalizados e melhorar o gerenciamento do uso compartilhado.
-Essas abordagens utilizam dados históricos de consumo, horários de uso e características dos usuários para treinar os modelos, impactando positivamente a gestão e a satisfação dos usuários.
+**Objetivo no projeto:**
+Integrar informações de pontos de recarga próximos ao usuário, ampliando a experiência de navegação e fornecendo dados adicionais sobre a infraestrutura de carregamento disponível.
+
+**Principais funcionalidades:**
+- Localização de estações de recarga.
+- Consulta de tipos de conectores.
+- Informações sobre potência dos carregadores.
+- Cobertura internacional.
+- Dados atualizados pela comunidade global.
+
+**Benefícios:**
+- API gratuita e aberta.
+- Fácil integração.
+- Grande quantidade de estações cadastradas.
+
+---
+
+### ANEEL Open Data API
+
+A ANEEL Open Data API disponibiliza dados públicos do setor elétrico brasileiro por meio da plataforma de Dados Abertos da Agência Nacional de Energia Elétrica (ANEEL). Os dados incluem informações sobre tarifas, distribuidoras, geração, transmissão e consumo de energia.
+
+**Objetivo no projeto:**
+Utilizar informações oficiais do setor elétrico para complementar análises de consumo energético, custos de recarga e indicadores regulatórios.
+
+**Principais funcionalidades:**
+- Consulta de tarifas de energia.
+- Informações sobre distribuidoras.
+- Dados de geração e consumo energético.
+- Indicadores regulatórios do setor elétrico.
+
+**Benefícios:**
+- Fonte oficial do Governo Federal.
+- Dados confiáveis e atualizados.
+- Suporte para análises energéticas e financeiras.
+
+---
+
+### Mapbox API
+
+A Mapbox é uma plataforma de geolocalização e mapas que oferece recursos para criação de mapas interativos, navegação, geocodificação e cálculo de rotas. A API permite integrar visualizações geográficas modernas em aplicações web e mobile.
+
+**Objetivo no projeto:**
+Exibir estações de recarga em mapas interativos e facilitar a navegação dos usuários até os pontos de carregamento disponíveis.
+
+**Principais funcionalidades:**
+- Mapas interativos.
+- Geocodificação de endereços.
+- Cálculo de rotas.
+- Busca por locais e pontos de interesse.
+- Visualização geográfica personalizada.
+
+**Benefícios:**
+- Interface moderna e intuitiva.
+- Alto nível de personalização.
+- Suporte para aplicações web e mobile.
+
+---
+
+## Integração das APIs na Arquitetura
+
+| API | Finalidade |
+|------|------------|
+| Open Charge Map API | Consulta de estações de recarga e informações dos carregadores |
+| ANEEL Open Data API | Obtenção de dados energéticos e tarifários oficiais |
+| Mapbox API | Visualização geográfica, mapas interativos e rotas |
 
 ## Arquitetura da Solução
 ### Diagrama
@@ -49,38 +104,39 @@ Essas abordagens utilizam dados históricos de consumo, horários de uso e carac
 ```mermaid
 flowchart TD
 
-A[Carregador HCA G2<br>Captura de sessões e consumo]
-B[Conectividade<br>RS-485 / Wi-Fi / RFID]
-C[Backend]
-D[Banco de Dados]
-E[Modelos de IA]
-F[APIs Externas]
-G[Frontend]
+    A[Carregador HCA G2<br>Captura de sessões e consumo]
+    B[Conectividade<br>RS-485 / Wi-Fi / RFID]
+    C[Backend]
+    D[Banco de Dados]
+    E[Modelos de IA]
+    G[Frontend]
 
-A --> B
-B --> C
+    A --> B
+    B --> C
 
-C --> D
-C --> E
-C --> F
+    C --> D
+    C --> E
 
-F -->|Open Charge | G
-F -->|ANEEL Open Data | G
-F -->|Mapbox API| G
+    subgraph F["APIs Externas"]
+        F1[Open Charge Map API]
+        F2[ANEEL Open Data API]
+        F3[Mapbox API]
+    end
 
+    C --> F
 
-D --> G
-E --> G
+    D --> G
+    E --> G
+    F --> G
 
-E --> E1[Previsão de Consumo]
-E --> E2[Segmentação de Usuários]
+    E --> E1[Previsão de Consumo]
+    E --> E2[Segmentação de Usuários]
 
-G --> H[Dashboard]
-G --> I[Faturas]
-G --> J[Controle de Sessões]
-G --> K[Relatórios]
+    G --> H[Dashboard]
+    G --> I[Faturas]
+    G --> J[Controle de Sessões]
+    G --> K[Relatórios]
 ```
-
 
 #### Carregador HCA G2: Captura dados de sessões de recarga e consumo.
 #### Conectividade: Comunicação via RS-485, Wi-Fi e RFID para transmissão dos dados ao backend.
