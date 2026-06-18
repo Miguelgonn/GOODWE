@@ -32,7 +32,7 @@ Cada solução apresenta diferentes abordagens para o problema, com vantagens e 
  API pública que oferece dados sobre estações de recarga em todo o mundo, incluindo localização, tipos de conectores e disponibilidade. Essa API pode ser integrada para fornecer informações adicionais sobre pontos de recarga próximos, ampliando a experiência do usuário.
  
 ### ANEEL Open Data API:
-Plataforma de dados abertos da Agência Nacional de Energia Elétrica (ANEEL), que disponibiliza informações oficiais sobre tarifas de energia, distribuidoras, consumo e indicadores do setor elétrico brasileiro. Pode ser utilizada para enriquecer análises de consumo energético, apoiar cálculos de custos de recarga e fornecer dados regulatórios confiáveis para o sistema.
+Plataforma de dados abertos da Agência Nacional de Energia Elétrica, que disponibiliza informações oficiais sobre tarifas de energia, distribuidoras, consumo e indicadores do setor elétrico brasileiro. Pode ser utilizada para enriquecer análises de consumo energético, apoiar cálculos de custos de recarga e fornecer dados regulatórios confiáveis para o sistema.
 
 ### Mapbox API:
 Plataforma de mapas e geolocalização que permite exibir mapas interativos, localizar estações de recarga, calcular rotas e converter endereços em coordenadas geográficas. Sua integração pode facilitar a visualização dos pontos de recarga e melhorar a navegação dos usuários até as estações disponíveis.
