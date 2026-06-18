@@ -245,6 +245,151 @@ Exibir estações de recarga em mapas interativos e facilitar a navegação dos 
   https://docs.mapbox.com/api/overview/
 
 ## Frente 3 — Arquitetura e Inteligência Artificial (Opção B)
+
+### Arquitetura da Plataforma EV ChargeOps (Volt Rate)
+
+A plataforma Volt Rate foi concebida com uma arquitetura em camadas, permitindo a separação das responsabilidades entre coleta de dados, comunicação, processamento e apresentação das informações aos usuários e gestores.
+
+### Camada Física
+
+A camada física é composta pelos equipamentos responsáveis pela realização da recarga dos veículos elétricos. Nesta camada encontram-se o carregador GoodWe HCA G2, os veículos conectados e os dispositivos de autenticação dos usuários, como cartões RFID.
+
+Durante uma sessão de recarga, o carregador coleta informações operacionais como potência instantânea, energia consumida, horário de início e término da sessão, além do status do carregamento. Esses dados representam a principal fonte de informações utilizada pela plataforma.
+
+### Camada de Conectividade
+
+A camada de conectividade é responsável pela transmissão dos dados gerados pelo carregador para sistemas externos de monitoramento e gerenciamento.
+
+O GoodWe HCA G2 oferece diferentes interfaces de comunicação, incluindo Wi-Fi, Ethernet (LAN), Bluetooth e RS-485. Essas tecnologias permitem a comunicação com a plataforma GoodWe SEMS e com sistemas de supervisão locais.
+
+A conectividade garante que os dados coletados durante a recarga sejam enviados para a nuvem e posteriormente disponibilizados para processamento pela plataforma Volt Rate.
+
+### Camada de Aplicação
+
+A camada de aplicação concentra a lógica de negócio da solução. Nela estão presentes os serviços responsáveis por receber os dados da API GoodWe, armazenar as informações em banco de dados, executar os cálculos de rateio e processar os algoritmos de inteligência artificial.
+
+Entre as principais funções desta camada destacam-se:
+
+* Registro e gerenciamento de usuários;
+* Armazenamento das sessões de recarga;
+* Cálculo automático dos custos individuais;
+* Geração de relatórios e indicadores;
+* Execução de modelos de inteligência artificial;
+* Emissão de faturas mensais.
+
+Essa camada representa o núcleo operacional da plataforma.
+
+### Camada de Apresentação
+
+A camada de apresentação disponibiliza as informações processadas para usuários e administradores através de interfaces web ou dispositivos móveis.
+
+Os usuários podem consultar informações como:
+
+* Histórico de recargas;
+* Consumo mensal de energia;
+* Custos acumulados;
+* Faturas geradas.
+
+Já os gestores possuem acesso a recursos adicionais, incluindo:
+
+* Monitoramento dos carregadores;
+* Indicadores de utilização;
+* Relatórios financeiros;
+* Estatísticas de consumo;
+* Alertas gerados pela inteligência artificial.
+
+A separação em camadas contribui para a escalabilidade, manutenção e evolução futura da plataforma.
+
+## Fluxo de Dados da Sessão de Recarga até a Fatura
+
+O fluxo de dados da plataforma inicia quando o usuário realiza a autenticação e conecta seu veículo ao carregador.
+
+Após a liberação da recarga, o carregador GoodWe passa a registrar informações como horário de início, potência utilizada, energia consumida e identificação do usuário. Esses dados são transmitidos por meio das interfaces de comunicação do equipamento para a plataforma GoodWe SEMS.
+
+A partir da integração com a API SEMS, a plataforma Volt Rate recebe as informações das sessões e realiza o armazenamento em banco de dados. Em seguida, os dados passam por etapas de validação e organização, garantindo consistência para os processos posteriores.
+
+Após o armazenamento, o sistema executa as regras de negócio responsáveis pelo cálculo do consumo individual de cada usuário. Os valores são convertidos em custos financeiros utilizando a tarifa energética definida pela administração da infraestrutura.
+
+Os algoritmos de inteligência artificial atuam sobre os dados históricos armazenados, gerando previsões de demanda e identificando possíveis comportamentos anormais ou inconsistências operacionais.
+
+Por fim, os valores calculados são consolidados em uma fatura individual, disponibilizada ao usuário através da interface da plataforma.
+
+O fluxo completo pode ser representado da seguinte forma:
+
+Usuário → Carregador GoodWe → Plataforma SEMS → API → Backend Volt Rate → Banco de Dados → Inteligência Artificial → Cálculo de Rateio → Fatura → Interface do Usuário.
+
+## Modelo de Rateio Proposto
+
+O modelo de rateio adotado pelo Volt Rate será baseado no consumo individual de energia elétrica medido durante cada sessão de recarga.
+
+O cálculo utilizará as seguintes variáveis:
+
+* Energia consumida (kWh);
+* Tarifa de energia elétrica (R$/kWh);
+* Taxa administrativa opcional;
+* Período de faturamento.
+
+A fórmula básica de cálculo será:
+
+Valor da Fatura = (Energia Consumida × Tarifa de Energia) + Taxa Administrativa
+
+Esse modelo foi escolhido por oferecer maior transparência e justiça entre os usuários, uma vez que cada indivíduo paga apenas pelo consumo efetivamente realizado.
+
+### Tratamento de Casos Excepcionais
+
+#### Sessão interrompida
+
+Caso a sessão seja interrompida por falha elétrica, desconexão do veículo ou problema operacional, será considerada apenas a energia efetivamente entregue até o momento da interrupção.
+
+#### Usuário sem recarga no período
+
+Usuários que não realizarem recargas durante o período de faturamento não receberão cobrança referente ao consumo energético.
+
+#### Dois veículos na mesma unidade
+
+Quando uma unidade possuir mais de um veículo cadastrado, o sistema consolidará o consumo de todas as sessões vinculadas à mesma unidade antes da geração da fatura mensal.
+
+Essa abordagem simplifica o processo de cobrança e mantém a rastreabilidade dos consumos individuais.
+
+# 6.4 Opção B — Definição do Papel da Inteligência Artificial
+
+A utilização de inteligência artificial representa um dos diferenciais da plataforma Volt Rate. Entre as aplicações consideradas para o projeto, destacam-se a previsão de consumo energético e a detecção de anomalias operacionais.
+
+## Previsão de Consumo Energético
+
+A primeira aplicação consiste na previsão da demanda futura de energia utilizando dados históricos de recarga.
+
+O objetivo é auxiliar gestores na tomada de decisão relacionada à expansão da infraestrutura e ao planejamento energético.
+
+A técnica sugerida é a regressão aplicada a séries temporais, utilizando variáveis como:
+
+* Consumo histórico;
+* Quantidade de sessões;
+* Horários de utilização;
+* Dias da semana;
+* Sazonalidade.
+
+Como resultado, a plataforma poderá estimar o consumo futuro e antecipar necessidades de investimento em novos carregadores ou aumento da capacidade elétrica.
+
+## Detecção de Anomalias
+
+A segunda aplicação consiste na identificação automática de comportamentos atípicos nas sessões de recarga.
+
+O objetivo é detectar possíveis falhas operacionais, usos indevidos ou consumos incompatíveis com o padrão histórico dos usuários.
+
+Para essa finalidade podem ser utilizadas técnicas de aprendizado não supervisionado, como Isolation Forest ou algoritmos de detecção de outliers.
+
+Os dados analisados incluem:
+
+* Duração das sessões;
+* Potência média;
+* Energia consumida;
+* Frequência de utilização;
+* Histórico individual dos usuários.
+
+Como resultado, o sistema poderá emitir alertas automáticos para administradores sempre que forem identificados padrões considerados anormais.
+
+A combinação dessas aplicações permite transformar os dados gerados pelos carregadores em informações estratégicas, agregando valor à plataforma e contribuindo para uma gestão mais eficiente da infraestrutura de mobilidade elétrica.
   
 ## Arquitetura da Solução
 ### Diagrama
