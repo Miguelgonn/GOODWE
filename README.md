@@ -28,6 +28,61 @@ Cada solução apresenta diferentes abordagens para o problema, com vantagens e 
 
 ## Frente 2: Base Regulatória e Técnica - Mapeamento de APIs Complementares (Opção C)
 
+## Resolução Normativa ANEEL nº 1.000/2021
+
+A Resolução Normativa nº 1.000/2021 da Agência Nacional de Energia Elétrica (ANEEL) estabelece as principais regras para instalação e operação de estações de recarga de veículos elétricos no Brasil.
+
+Um dos pontos mais importantes para o projeto Volt Rate está relacionado à possibilidade de exploração comercial da recarga. De acordo com o Art. 554 da resolução, é permitida a recarga de veículos pertencentes a terceiros, inclusive para fins comerciais, com preços livremente negociados entre as partes. Dessa forma, condomínios, empresas e operadores privados podem oferecer serviços de recarga sem necessidade de autorização específica para comercialização da energia.
+
+A norma também determina que a instalação de estações de recarga deve ser comunicada previamente à distribuidora de energia sempre que houver necessidade de nova conexão elétrica, aumento ou redução de carga instalada ou alteração do nível de tensão da unidade consumidora. Essa exigência busca garantir a segurança e a capacidade da rede elétrica local.
+
+Outro aspecto relevante está previsto no Art. 552, que determina que equipamentos de recarga não exclusivos para uso privado devem ser compatíveis com protocolos abertos de domínio público para comunicação, supervisão e controle remotos. Essa exigência favorece a interoperabilidade entre carregadores e plataformas de gerenciamento, permitindo a integração com sistemas externos de monitoramento e cobrança.
+
+Essas determinações regulatórias favorecem o desenvolvimento do Volt Rate, uma vez que a plataforma depende da coleta de dados dos carregadores para realizar monitoramento, cálculo de custos e geração de relatórios de consumo.
+
+## Carregador GoodWe HCA G2
+
+O carregador GoodWe HCA G2 foi selecionado como referência tecnológica por oferecer recursos de conectividade e monitoramento compatíveis com os objetivos do projeto. O equipamento suporta diferentes interfaces de comunicação, permitindo sua integração com sistemas externos e plataformas de gestão.
+
+### RS-485
+
+A interface RS-485 utiliza comunicação serial industrial e suporta o protocolo Modbus. Essa tecnologia permite que sistemas externos realizem a leitura de informações operacionais do carregador, como potência instantânea, estado de funcionamento e energia consumida. Para o Volt Rate, essa interface pode ser utilizada para integração direta com sistemas locais de monitoramento.
+
+### LAN (Ethernet)
+
+A conexão LAN permite que o carregador seja conectado diretamente à rede local da instalação. Por meio dessa interface, os dados podem ser enviados para servidores de monitoramento e plataformas de gerenciamento, oferecendo maior estabilidade de comunicação em comparação às conexões sem fio.
+
+### Wi-Fi
+
+A conectividade Wi-Fi possibilita a comunicação do carregador com a internet sem necessidade de cabeamento de rede. Essa funcionalidade permite o envio de informações para a plataforma SEMS+ e possibilita monitoramento remoto por aplicativos e sistemas em nuvem.
+
+### Bluetooth
+
+O Bluetooth é utilizado principalmente durante o processo de configuração inicial e manutenção do equipamento. Técnicos e administradores podem acessar parâmetros locais do carregador utilizando dispositivos móveis sem necessidade de conexão direta à internet.
+
+### RFID
+
+A tecnologia RFID permite a autenticação de usuários por meio de cartões ou tags de identificação. Essa funcionalidade é especialmente importante em ambientes compartilhados, pois possibilita registrar qual usuário iniciou cada sessão de recarga. No contexto do Volt Rate, o RFID pode ser utilizado para associar automaticamente o consumo energético ao respectivo usuário e realizar o rateio dos custos.
+
+## API GoodWe (SEMS Portal)
+
+O ecossistema GoodWe utiliza a plataforma SEMS (Smart Energy Management System) para monitoramento remoto de equipamentos conectados. A comunicação entre o carregador e a nuvem permite o armazenamento de informações operacionais que podem ser utilizadas por sistemas externos através de integrações autorizadas.
+
+Entre os principais dados disponibilizados pelo sistema estão:
+
+* Status operacional do carregador;
+* Estado da sessão de carregamento;
+* Potência instantânea de recarga;
+* Energia acumulada entregue ao veículo;
+* Histórico de consumo energético;
+* Horários de início e término das sessões;
+* Eventos de falha ou interrupção;
+* Informações de autenticação e gerenciamento dos usuários.
+
+Esses dados são fundamentais para o funcionamento do Volt Rate, pois permitem acompanhar o uso da infraestrutura em tempo real, gerar relatórios de consumo, calcular custos individuais e desenvolver análises baseadas em inteligência artificial.
+
+A integração entre a regulamentação da ANEEL, os recursos de comunicação do GoodWe HCA G2 e os dados disponibilizados pela plataforma SEMS cria uma base tecnológica adequada para o desenvolvimento de soluções voltadas à gestão inteligente de carregadores compartilhados.
+
 ### Open Charge Map API
 
 A Open Charge Map é uma API pública e colaborativa que fornece informações sobre estações de recarga para veículos elétricos em todo o mundo. A plataforma disponibiliza dados como localização geográfica, tipos de conectores, potência dos carregadores e informações operacionais das estações.
@@ -108,6 +163,7 @@ Exibir estações de recarga em mapas interativos e facilitar a navegação dos 
 
 - Mapbox API:
   https://docs.mapbox.com/api/overview/
+
   
 ## Arquitetura da Solução
 ### Diagrama
