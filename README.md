@@ -534,7 +534,7 @@ As funcionalidades previstas incluem:
 
 ### Integração com APIs
 
-Serão implementadas as integrações estudadas na Sprint 01 para permitir a comunicação da plataforma com serviços externos.
+Implementaremos as integrações para permitir a comunicação da plataforma com serviços externos.
 
 APIs previstas:
 
@@ -553,9 +553,7 @@ Será desenvolvido o mecanismo responsável pelo cálculo automático dos custos
 O sistema deverá:
 
 - Calcular o consumo individual de cada usuário;
-- Aplicar tarifas configuráveis;
 - Gerar cobranças pré-pagas e pós-pagas;
-- Consolidar o consumo de múltiplos veículos pertencentes à mesma unidade.
 
 ---
 
@@ -563,7 +561,7 @@ O sistema deverá:
 
 Será desenvolvido um dashboard para usuários e gestores.
 
-Funcionalidades previstas para os usuários:
+Funcionalidades previstas Usuários:
 
 - Consulta de histórico de recargas;
 - Visualização do consumo acumulado;
@@ -575,7 +573,6 @@ Funcionalidades previstas para os gestores:
 - Monitoramento dos carregadores;
 - Visualização de relatórios;
 - Acompanhamento de indicadores de utilização;
-- Recebimento de alertas gerados pela IA.
 
 ---
 
@@ -590,5 +587,3 @@ Os testes terão como objetivo validar:
 - O armazenamento correto dos dados;
 - O desempenho dos modelos de IA;
 - A usabilidade da plataforma.
-
-Com isso, espera-se obter uma primeira versão funcional do Volt Rate, preparada para futuras expansões e melhorias.
