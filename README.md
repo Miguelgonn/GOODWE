@@ -500,4 +500,95 @@ A cobrança é realizada apenas no fechamento do mês, permitindo que o usuário
 - Melhor acompanhamento do consumo mensal;
 - Processo semelhante a contas tradicionais de serviços.
   
-## Plano para a Sprint 02
+## Planejamento da Sprint 02
+
+### Banco de Dados
+
+Será realizada a modelagem e implementação do banco de dados responsável pelo armazenamento das informações da plataforma.
+
+As principais entidades serão:
+
+- Usuários;
+- Veículos;
+- Sessões de recarga;
+- Faturas;
+
+
+O objetivo é garantir a organização e persistência dos dados utilizados pelo sistema.
+
+---
+
+### Desenvolvimento do Backend
+
+Será desenvolvido o backend da aplicação utilizando Python.
+
+As funcionalidades previstas incluem:
+
+- Cadastro de usuários;
+- Cadastro de veículos;
+- Registro de sessões de recarga;
+- Consulta de histórico de consumo;
+- Geração de faturas;
+
+---
+
+### Integração com APIs
+
+Serão implementadas as integrações estudadas na Sprint 01 para permitir a comunicação da plataforma com serviços externos.
+
+APIs previstas:
+
+- GoodWe SEMS Portal API;
+- Open Charge Map API;
+- Google Places API.
+
+Essas integrações permitirão a coleta de dados das sessões de recarga e a consulta de informações sobre estações de carregamento.
+
+---
+
+### Implementação do Modelo de Rateio
+
+Será desenvolvido o mecanismo responsável pelo cálculo automático dos custos de recarga.
+
+O sistema deverá:
+
+- Calcular o consumo individual de cada usuário;
+- Aplicar tarifas configuráveis;
+- Gerar cobranças pré-pagas e pós-pagas;
+- Consolidar o consumo de múltiplos veículos pertencentes à mesma unidade.
+
+---
+
+### Desenvolvimento da Interface
+
+Será desenvolvido um dashboard para usuários e gestores.
+
+Funcionalidades previstas para os usuários:
+
+- Consulta de histórico de recargas;
+- Visualização do consumo acumulado;
+- Acompanhamento de saldo de créditos;
+- Consulta de faturas.
+
+Funcionalidades previstas para os gestores:
+
+- Monitoramento dos carregadores;
+- Visualização de relatórios;
+- Acompanhamento de indicadores de utilização;
+- Recebimento de alertas gerados pela IA.
+
+---
+
+### Testes e Validação
+
+Ao final da Sprint 02 serão realizados testes utilizando dados simulados de sessões de recarga.
+
+Os testes terão como objetivo validar:
+
+- O funcionamento das integrações;
+- A precisão dos cálculos de cobrança;
+- O armazenamento correto dos dados;
+- O desempenho dos modelos de IA;
+- A usabilidade da plataforma.
+
+Com isso, espera-se obter uma primeira versão funcional do Volt Rate, preparada para futuras expansões e melhorias.
