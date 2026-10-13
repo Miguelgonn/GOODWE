@@ -49,7 +49,7 @@ goodwe/
     │   └── teste.txt         # Saída da demonstração com dados simulados
 ```
 
----
+
 
 ### Menu
 
@@ -158,7 +158,6 @@ Apenas sessões válidas (`ok` ou `aprovada`) entram na previsão, de modo que a
 
 O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a GoodWe. Por isso o caminho é configurável (`VOLT_SEMS_PATH`) e os nomes dos campos devem ser ajustados na função `normalizar` do `apis.py` conforme a resposta real. Esta integração ainda não foi validada com um carregador real.
 
----
 
 ## 4 Decisões técnicas
 
@@ -172,7 +171,6 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 | Credenciais em variáveis de ambiente | Impede que senhas e chaves de API sejam versionadas no repositório |
 | Dados simulados com semente fixa | Torna a demonstração reproduzível |
 
----
 
 ## 5 Desvios em relação à Sprint 01 e justificativas
 
@@ -186,7 +184,6 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 | Detecção de anomalias com Isolation Forest | Regras físicas e estatísticas (4 desvios-padrão) | Os dados disponíveis são simulados e a explicação do motivo de cada alerta era prioridade. O Isolation Forest fica como evolução quando houver dados reais |
 | Mapbox para visualização de mapas | Não implementado | Depende de interface web; a lista de estações aparece no console |
 
----
 
 ## 6 Evidências de funcionamento
 
@@ -211,8 +208,6 @@ O sistema registra as recargas realizadas e verifica se o consumo informado é c
 
 O módulo de cobrança calcula os valores com base no consumo em kWh e na tarifa configurada. O sistema apresenta os pagamentos realizados por recarga, os valores previstos para pagamento no fim do mês e as sessões retidas para revisão.
 
-
----
 
 ## 9 Próximos passos
 
