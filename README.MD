@@ -47,7 +47,6 @@ goodwe/
     ├── dados.json            # Base de dados local (criada automaticamente)
     ├── dados/
     │   └── teste.txt         # Saída da demonstração com dados simulados
-    └── evidencias/           # Evidências de funcionamento (demonstracao.txt e capturas)
 ```
 
 ---
