@@ -10,8 +10,6 @@
 | Miguel Gonçalves | rm573793 |
 
 
-Enterprise Challenge 2026
-
 
 ---
 
