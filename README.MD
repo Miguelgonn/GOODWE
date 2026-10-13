@@ -203,7 +203,7 @@ A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados
 | Previsão de consumo | Previsão de 7 dias, variação de -10% e recomendação de demanda estável |
 | Resumo da IA 1 | 4 sessões retidas, somando R$ 120,65 que não foram cobrados |
 
-1 . S E S S Ã O N O R M A L : A n a r e c a r r e g a 1 1 k W h e m 2 h   s t a t u s : o k | c o n s u m o : 1 1 . 0 k W h | v a l o r : R $ 1 0 , 4 5 2 . S E S S Ã O S U S P E I T A : K a i q u e , 3 0 k W h e m 1 h n u m c a r r e g a d o r d e 7 k W   s t a t u s : s u s p e i t a | m o t i v o s : 3 0 . 0 k W h e m 1 . 0 h é i m p o s s í v e l n u m c a r r e g a d o r d e 7 k W
+
 ---
 
 ## 7. Próximos passos
