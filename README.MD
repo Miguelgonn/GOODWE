@@ -1,4 +1,4 @@
-# GOODWE Sprint 2.0
+# GoodWe + FIAP: Volt Rate (EV ChargeOps) - Sprint 02
 
 ## 👥 Equipe
 
@@ -8,7 +8,7 @@
 | Kaique           | rm570533 |
 | Miguel Antunes   | rm573643 |
 | Miguel Gonçalves | rm573793 |
-# GoodWe + FIAP: Volt Rate (EV ChargeOps) - Sprint 02
+
 
 Enterprise Challenge 2026
 
