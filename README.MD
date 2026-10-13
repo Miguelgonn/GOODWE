@@ -200,11 +200,11 @@ A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados
 | Previsão de consumo | Previsão de 7 dias, variação de -10% e recomendação de demanda estável |
 | Resumo da IA 1 | 4 sessões retidas, somando R$ 120,65 que não foram cobrados |
 
-### 7 Registro e validação de sessões
+## 7 Registro e validação de sessões
 
 O sistema registra as recargas realizadas e verifica se o consumo informado é compatível com a potência do carregador e o tempo de utilização. Quando identifica alguma inconsistência, a sessão é marcada como suspeita e encaminhada para revisão pela IA.
 
-### 8 Cobrança do mês
+## 8 Cobrança do mês
 
 O módulo de cobrança calcula os valores com base no consumo em kWh e na tarifa configurada. O sistema apresenta os pagamentos realizados por recarga, os valores previstos para pagamento no fim do mês e as sessões retidas para revisão.
 
