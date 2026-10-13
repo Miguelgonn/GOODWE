@@ -211,7 +211,6 @@ O sistema registra as recargas realizadas e verifica se o consumo informado é c
 
 O módulo de cobrança calcula os valores com base no consumo em kWh e na tarifa configurada. O sistema apresenta os pagamentos realizados por recarga, os valores previstos para pagamento no fim do mês e as sessões retidas para revisão.
 
-![Registro, validação de sessões e cobrança mensal](prints/registro-validacao-cobranca.png)
 
 ---
 
