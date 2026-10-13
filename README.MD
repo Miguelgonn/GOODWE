@@ -52,25 +52,6 @@ goodwe/
 
 ---
 
-## 3. Como executar
-
-**Requisitos:** Python 3.8 ou superior. Não é necessário instalar nenhum pacote.
-
-```bash
-cd goodwe/trabalho
-
-# Cria a pasta onde a demonstração grava a saída (somente se ainda não existir)
-mkdir -p evidencias
-
-# Menu interativo
-python volt_rate.py
-
-# Demonstração completa: recria o dados.json e grava evidencias/demonstracao.txt
-python volt_rate.py demo
-```
-
-Na primeira execução, o `dados.json` é criado com 5 usuários, 3 carregadores e cerca de 60 dias de sessões simuladas, incluindo anomalias propositais para testar a IA.
-
 ### Menu
 
 | Opção | Função |
@@ -98,9 +79,9 @@ export VOLT_ANEEL_RESOURCE="id-do-conjunto-de-dados"   # opcional
 
 ---
 
-## 4. Funcionamento
+## 3. Funcionamento
 
-### 4.1 Dados
+### Dados
 
 Os dados ficam em `dados.json`, com três blocos:
 
@@ -121,7 +102,7 @@ O RFID identifica o usuário que iniciou a sessão, como previsto na arquitetura
 | `aprovada` | Suspeita aprovada pelo gestor; passa a ser cobrada |
 | `rejeitada` | Suspeita rejeitada pelo gestor; nunca é cobrada |
 
-### 4.2 Modelo de rateio
+### Modelo de rateio
 
 ```
 Valor = Energia consumida (kWh) x Tarifa (R$/kWh)
@@ -146,7 +127,7 @@ Casos excepcionais, conforme definido na Sprint 01:
 
 A cobrança implementada é de **visualização**: o sistema calcula e exibe os valores, mas não emite boleto nem se integra a meio de pagamento.
 
-### 4.3 Módulo de IA
+### Módulo de IA
 
 A IA participa do fluxo principal da solução, e não é um recurso separado.
 
@@ -168,7 +149,7 @@ Usa regressão linear por mínimos quadrados sobre o consumo diário em kWh e so
 
 Apenas sessões válidas (`ok` ou `aprovada`) entram na previsão, de modo que a IA 1 também protege a qualidade dos dados da IA 2.
 
-### 4.4 Integrações com APIs
+###Integrações com APIs
 
 | API | Uso no projeto |
 |---|---|
@@ -180,7 +161,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 5. Decisões técnicas
+## 4. Decisões técnicas
 
 | Decisão | Motivo |
 |---|---|
@@ -194,7 +175,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 6. Desvios em relação à Sprint 01 e justificativas
+## 5. Desvios em relação à Sprint 01 e justificativas
 
 | Planejado na Sprint 01 | Implementado | Justificativa |
 |---|---|---|
@@ -208,7 +189,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 7. Evidências de funcionamento
+## 6. Evidências de funcionamento
 
 A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados simulados e grava a saída em `evidencias/demonstracao.txt`. Uma cópia está em `dados/teste.txt`.
 
@@ -225,7 +206,7 @@ A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados
 
 ---
 
-## 8. Próximos passos
+## 7. Próximos passos
 
 - Interface web para usuários e gestores.
 - Banco de dados relacional no lugar do JSON.
