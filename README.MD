@@ -160,7 +160,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 4. Decisões técnicas
+## 4 Decisões técnicas
 
 | Decisão | Motivo |
 |---|---|
@@ -174,7 +174,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 5. Desvios em relação à Sprint 01 e justificativas
+## 5 Desvios em relação à Sprint 01 e justificativas
 
 | Planejado na Sprint 01 | Implementado | Justificativa |
 |---|---|---|
@@ -188,7 +188,7 @@ O endpoint de sessões do carregador HCA G2 na SEMS depende do contrato com a Go
 
 ---
 
-## 6. Evidências de funcionamento
+## 6 Evidências de funcionamento
 
 A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados simulados e grava a saída em `evidencias/demonstracao.txt`. Uma cópia está em `dados/teste.txt`.
 
@@ -203,10 +203,19 @@ A demonstração (`python volt_rate.py demo`) executa o fluxo completo com dados
 | Previsão de consumo | Previsão de 7 dias, variação de -10% e recomendação de demanda estável |
 | Resumo da IA 1 | 4 sessões retidas, somando R$ 120,65 que não foram cobrados |
 
+### 7 Registro e validação de sessões
+
+O sistema registra as recargas realizadas e verifica se o consumo informado é compatível com a potência do carregador e o tempo de utilização. Quando identifica alguma inconsistência, a sessão é marcada como suspeita e encaminhada para revisão pela IA.
+
+### 8 Cobrança do mês
+
+O módulo de cobrança calcula os valores com base no consumo em kWh e na tarifa configurada. O sistema apresenta os pagamentos realizados por recarga, os valores previstos para pagamento no fim do mês e as sessões retidas para revisão.
+
+![Registro, validação de sessões e cobrança mensal](prints/registro-validacao-cobranca.png)
 
 ---
 
-## 7. Próximos passos
+## 9 Próximos passos
 
 - Interface web para usuários e gestores.
 - Banco de dados relacional no lugar do JSON.
