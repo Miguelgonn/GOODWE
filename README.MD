@@ -23,7 +23,6 @@ O **Volt Rate** é o protótipo da plataforma EV ChargeOps, desenvolvido a parti
 Sessão de recarga -> Registro e validação (IA) -> Consumo por usuário -> Cobrança (kWh x tarifa) -> Previsão de demanda (IA)
 ```
 
-O protótipo foi escrito em **Python, usando apenas a biblioteca padrão**, e funciona em modo console, com menu interativo e um modo de demonstração automática.
 
 ### O que foi implementado
 
